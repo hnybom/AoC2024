@@ -1,8 +1,17 @@
 package fi.solita.hnybom.aoc2024.common
 
+import java.io.File
+
 data class Coordinate(val x: Long, val y: Long)
 
 object Common {
+
+    fun readInput(day: Int, test: Boolean = false) : File {
+        if(test) {
+            return File("/Users/henri.nybom/work/own/AoC2024/src/test/resources/input${day}_test.txt")
+        }
+        return File("/Users/henri.nybom/work/own/AoC2024/src/main/resources/input$day.txt")
+    }
 
     fun isAdjacentTo(coordinate: Coordinate, map: Map<Coordinate, *>) : Boolean {
         return map.containsKey(Coordinate(coordinate.x - 1, coordinate.y)) ||
