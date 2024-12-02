@@ -44,7 +44,6 @@ class Day2 {
             createTree(report, null, emptyList(), 0)
         }
 
-
         return trees.count { tree ->
             tree.any { nodes -> isTreeValid(nodes) }
         }
