@@ -8,7 +8,7 @@ object Common {
 
     fun readInput(day: Int, test: Boolean = false) : File {
         if(test) {
-            return File("/Users/henri.nybom/work/own/AoC2024/src/test/resources/input${day}_test.txt")
+            return File("/Users/henri.nybom/work/own/AoC2024/src/main/resources/input${day}_test.txt")
         }
         return File("/Users/henri.nybom/work/own/AoC2024/src/main/resources/input$day.txt")
     }
