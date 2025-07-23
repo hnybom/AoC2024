@@ -4,6 +4,10 @@ import java.io.File
 
 data class Coordinate(val x: Long, val y: Long)
 
+enum class Direction {
+    UP, DOWN, LEFT, RIGHT
+}
+
 object Common {
 
     fun readInput(day: Int, test: Boolean = false) : File {
@@ -11,6 +15,19 @@ object Common {
             return File("/Users/henri.nybom/work/own/AoC2024/src/main/resources/input${day}_test.txt")
         }
         return File("/Users/henri.nybom/work/own/AoC2024/src/main/resources/input$day.txt")
+    }
+
+    fun getAdjacentCoordinates(coordinate: Coordinate) : List<Coordinate> {
+        return listOf(
+            Coordinate(coordinate.x - 1, coordinate.y),
+            Coordinate(coordinate.x + 1, coordinate.y),
+            Coordinate(coordinate.x, coordinate.y - 1),
+            Coordinate(coordinate.x, coordinate.y + 1),
+            Coordinate(coordinate.x - 1, coordinate.y - 1),
+            Coordinate(coordinate.x + 1, coordinate.y + 1),
+            Coordinate(coordinate.x - 1, coordinate.y + 1),
+            Coordinate(coordinate.x + 1, coordinate.y - 1)
+        )
     }
 
     fun isAdjacentTo(coordinate: Coordinate, map: Map<Coordinate, *>) : Boolean {
