@@ -23,7 +23,7 @@ kotlin {
 }
 
 // Create tasks to run each day
-for (day in 1..6) {
+for (day in 1..25) {
     tasks.register<JavaExec>("runDay$day") {
         group = "application"
         description = "Run Day $day solution"

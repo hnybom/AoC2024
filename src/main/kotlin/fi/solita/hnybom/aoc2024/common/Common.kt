@@ -30,6 +30,7 @@ object Common {
         )
     }
 
+
     fun isAdjacentTo(coordinate: Coordinate, map: Map<Coordinate, *>) : Boolean {
         return map.containsKey(Coordinate(coordinate.x - 1, coordinate.y)) ||
                 map.containsKey(Coordinate(coordinate.x + 1, coordinate.y)) ||

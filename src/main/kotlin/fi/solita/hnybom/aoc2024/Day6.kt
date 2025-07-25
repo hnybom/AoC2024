@@ -10,14 +10,7 @@ class Day6 {
 
     data class Guard(val location: Coordinate, val direction: Direction)
 
-    data class GuardStep(val guard: Guard, val step: Long, val turns: Long) {
-
-        fun IsSameStep(other: GuardStep): Boolean {
-            return guard.direction == other.guard.direction && guard.location == other.guard.location
-        }
-
-    }
-
+    data class GuardStep(val guard: Guard, val step: Long, val turns: Long)
 
     private val input = Common.readInput(6).readLines()
     private var initialGuard : Guard? = null
